@@ -38,7 +38,7 @@ describe "Pets Controller" do
       @pet = Pet.last
       binding.pry
       expect(@pet.name).to eq("Michael")
-      expect(@pet.owner.name).to eq("Cricky")
+    //  expect(@pet.owner.name).to eq("Cricky")
     end
 
       it " creates a new pet and a new owner" do
