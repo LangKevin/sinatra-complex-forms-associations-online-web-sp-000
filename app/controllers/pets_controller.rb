@@ -24,7 +24,7 @@ class PetsController < ApplicationController
   end
 
   get '/pets/:id' do
-    @owners = Owner.all
+    # @owners = Owner.all
     @pet = Pet.find(params[:id])
 # binding.pry
     erb :'/pets/show'
@@ -37,7 +37,7 @@ class PetsController < ApplicationController
   end
 
   patch '/pets/:id' do
-@owners = Owner.all
+   @owners = Owner.all
    @pet = Pet.find(params[:id])
    @pet.update(params[:pet])
 
