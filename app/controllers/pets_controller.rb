@@ -3,7 +3,6 @@ class PetsController < ApplicationController
   get '/pets' do
     @pets = Pet.all
     @owners = Owner.all
-binding.pry
     erb :'/pets/index'
   end
 
@@ -14,7 +13,6 @@ binding.pry
 
   post '/pets' do
     @pet = Pet.create(params[:pet])
-binding.pry
     if !params["owner"]["name"].empty?
       @pet.owner = Owner.create(name: params["owner"]["name"])
     end
@@ -31,8 +29,8 @@ binding.pry
   end
 
   patch '/pets/:id' do
-binding.pry
-@pet = Pet.find(params[:id])
+
+   @pet = Pet.find(params[:id])
    @pet.update(params[:pet])
 
    #binding.pry
