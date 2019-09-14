@@ -37,7 +37,7 @@ class PetsController < ApplicationController
   end
 
   patch '/pets/:id' do
-
+@owners = Owner.all
    @pet = Pet.find(params[:id])
    @pet.update(params[:pet])
 
